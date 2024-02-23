@@ -358,8 +358,9 @@ app.post('/create-post', upload.fields([{ name: 'image', maxCount: 1 }, { name: 
 });
 
 
-const PORT = process.env.PORT || 8080;
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+if (process.env.NODE_ENV !== 'test' && process.env.NODE_ENV !== 'development') {
+  const PORT = process.env.PORT || 8080;
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+}
