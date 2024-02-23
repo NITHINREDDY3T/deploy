@@ -1,5 +1,5 @@
 [build]
-  command = "npm install && node server.js"
+  command = "node server.js"
   publish = "/"  # Replace "public" with the directory where your built files are located
 
 [build.environment]
