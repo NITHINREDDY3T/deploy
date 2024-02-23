@@ -1,6 +1,6 @@
 [build]
   command = "npm install && node server.js"
-  publish = "views"  # Replace "public" with the directory where your built files are located
+  publish = "/"  # Replace "public" with the directory where your built files are located
 
 [build.environment]
   MONGODB_URI = "mongodb+srv://arrearbatch:Kareoss45@cluster0.gkwgzu9.mongodb.net/?retryWrites=true&w=majority"
