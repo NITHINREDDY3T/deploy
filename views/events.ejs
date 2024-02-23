@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/test.css">
+</head>
+
+<body>
+    <div class="blog-slider">
+        <div class="blog-slider__wrp swiper-wrapper">
+            <% for (const category in posts) { %>
+            <% posts[category].forEach(post => { %>
+            <div class="blog-slider__item swiper-slide">
+                <div class="blog-slider__img">
+                    <div class="post-image-container">
+                        <% if (post.image && post.image.data) { %>
+                        <img src="data:<%= post.image.contentType %>;base64,<%= post.image.data.toString('base64') %>"
+                            alt="Post Image" class="post-image">
+                        <% } %>
+                    </div>
+                </div>
+                <div class="blog-slider__content">
+                    <div class="post-content">
+                        <div class="post-header">
+                            <strong><%= post.userId.username %></strong>
+                            <img src="https://i.ibb.co/VDHvzFH/oss-logo-h-1.png" alt="Verified"
+                                class="verified-icon">
+                            <h3><a href="/post/<%= post._id %>"><%= post.title %></a></h3>
+                        </div>
+                        <div class="post-meta">
+                            <i class="fas fa-folder"></i> <strong>Category:</strong> <%= post.category %>
+                            <br>
+                            <i class="far fa-clock"></i> <small><%= timeAgo(post.timestamp) %></small>
+                        </div>
+                        <p class="post-description"><%= post.description %></p>
+                        <a href="<%= post.link %>" class="blog-slider__button">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+            <% } %>
+        </div>
+        <div class="blog-slider__pagination"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper(".blog-slider", {
+            spaceBetween: 30,
+            effect: "fade",
+            loop: true,
+            mousewheel: {
+                invert: false,
+            },
+            pagination: {
+                el: ".blog-slider__pagination",
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+
+</html>

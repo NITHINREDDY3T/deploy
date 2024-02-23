@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
+
+:root {
+    --red: #CE1212;
+    --dark-red: #990000;
+    --black: #171717;
+    --light-bg: #FFFFFF; 
+    --light-red: #FF4D4D;
+    --white: #171717;
+}
+
+* {
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: .2s linear;
+}
+
+*::selection {
+    background-color: var(--red);
+    color: var(--black); 
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 8rem;
+}
+
+::-webkit-scrollbar {
+    height: .5rem;
+    width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--red);
+    border-radius: 5rem;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--black); 
+}
+
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--light-bg);
+}
+
+.header .flex {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .flex .logo {
+    font-size: 2.5rem;
+    color: var(--red);
+}
+
+.header .flex .navbar a {
+    margin-left: 2rem;
+    color: var(--black); 
+    font-size: 2rem;
+}
+
+.header .flex .navbar a:hover {
+    color: var(--red);
+}
+
+#menu-btn {
+    cursor: pointer;
+    color: var(--red);
+    font-size: 2.5rem;
+    display: none;
+}
+
+.home .row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 8rem;
+}
+
+.home .row .content {
+    flex: 1 1 50%;
+    text-align: center;
+}
+
+.home .row .image {
+    flex: 1 1 50%;
+}
+
+.home .row .image img {
+    width: 77%;
+    margin-top: 15px;
+    border-radius: 34px;
+    margin-left:175px;
+
+}
+
+.home .row .content h3 {
+    margin-bottom: 1rem;
+    font-size: 5rem;
+    color: var(--black); 
+    line-height: 1;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 34px;
+    background-color: var(--light-red);
+    cursor: pointer;
+    color: var(--white); 
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    z-index: 1;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--red);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.count .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.count .box-container .box {
+    background-color: var(--light-bg);
+    border-radius: .5rem;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.count .box-container .box {
+    background-color: #fff1f1;
+    border-radius: .5rem;
+    padding: 2rem;
+    height: 98px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease; 
+    border: 2px solid transparent; 
+}
+
+.count .box-container .box:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
+    border-color: var(--black); 
+}
+
+
+.count .box-container .box:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); }
+
+.count .box-container .box i {
+    font-size: 5rem;
+    color: var(--red);
+}
+
+.count .box-container .box .content h3 {
+    font-size: 2rem;
+    color: var(--black); 
+    margin-bottom: .5rem;
+}
+
+.count .box-container .box .content p {
+    font-size: 1.6rem;
+    color: var(--red);
+}
+
+.header .flex .navbar {
+    display: flex;
+    align-items: center;
+}
+
+.header .flex .navbar a {
+    margin-left: 2rem;
+    color: var(--black);
+    font-size: 2rem;
+    position: relative;
+}
+
+.header .flex .navbar a:hover {
+    color: var(--red);
+}
+
+
+.header .flex .navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.header .flex .navbar a:hover::after {
+    background-color: var(--red);
+}
+
+@media (max-width: 768px) {
+    .home .row {
+        flex-direction: column;
+    }
+
+    .home .row .content,
+    .home .row .image img {
+        width: 80%;
+        margin-top: 15px;
+        border-radius: 34px;
+        margin-left: 24px;
+    }
+}
+
+    .home .row .content h3 {
+        font-size: 3rem;
+    }
+
+
+@media (max-width: 450px) {
+    .home .row .content h3 {
+        font-size: 2.5rem;
+     
+        
+    }
+}
+
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-btn {
+        display: inline-block;
+    }
+
+    #menu-btn.fa-times {
+        transform: rotate(180deg);
+    }
+
+    .header .flex .navbar {
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        border-top: .1rem solid var(--black); 
+        border-bottom: .1rem solid var(--black); 
+        background-color: var(--light-bg);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0)
+    }
+
+    .header .flex .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .header .flex .navbar a {
+        display: block;
+        margin: 2rem;
+    }
+}
+.teachers .w {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem; 
+}
+
+.teachers .slide {
+    flex: 0 0 calc(50% - 0.5rem); 
+    margin: 0.5rem;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+.teachers .slide {
+    position: relative;
+}
+
+.teachers .slide:hover img {
+    transform: scale(1.1); 
+    filter: brightness(80%); 
+}
+
+.teachers .slide img {
+   height: 25rem;
+   width: 100%;
+   object-fit: cover;
+   border-radius: .5rem;
+}
+
+.teachers .slide .share {
+    position: absolute;
+    top: 1rem;
+    left:1rem;
+    transition: opacity 0.3s ease; 
+}
+.teachers .heading {
+    font-size: 2.5rem; 
+}
+
+
+.teachers .slide:hover .share {
+    opacity: 1; 
+}
+.teachers {
+    text-align: center; 
+    margin-top: 4rem; 
+}
+
+.teachers .heading {
+    color: var(--red); 
+    margin-bottom: 2rem; 
+}
+
+.teachers .slide {
+    
+    margin-bottom: 2rem; 
+}
+
+
+@media (min-width: 768px) {
+    .teachers .slide {
+        flex: 0 0 calc(25% - 1rem); 
+    }
+}
+
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+}
+@media (max-width: 768px) {
+    .header .flex .navbar {
+        flex-direction: column;
+        align-items: flex-start; 
+    }
+
+    .header .flex .navbar a {
+        margin: 1rem 0;
+    }
+}

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperCool - Propose Your Thinking</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./project.css">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        background-color: #f8f8f8;
+        font-family: Arial, sans-serif;
+    }
+
+    .header {
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+    }
+    
+    .top-bar {
+        background-color: #d62828; /* Red theme color */
+        color: #fff;
+        padding: 10px 20px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .top-bar p {
+        font-style: italic;
+        margin-left: 10px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+    
+    .centered-text {
+        position: relative;
+        z-index: 1;
+        color: #d62828; /* Red theme color */
+        margin-top: 20px; /* Adjusted margin */
+        font-size: 1.5em; /* Adjusted font size */
+        font-weight: bold; /* Adjusted font weight */
+        text-transform: uppercase; /* Adjusted text case */
+    }
+    
+    .wave-container {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .wave {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .card-title {
+        color: #262626;
+        font-size: 1.5em;
+        line-height: normal;
+        font-weight: 700;
+        margin-bottom: 0.5em;
+    }
+    
+    .small-desc {
+        font-size: 1em;
+        font-weight: 400;
+        line-height: 1.5em;
+        color: #555;
+    }
+    
+    .go-corner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 2em;
+        height: 2em;
+        overflow: hidden;
+        top: 0;
+        right: 0;
+        background: linear-gradient(135deg, #ff8b8b, #d62828);
+        border-radius: 0 4px 0 32px;
+    }
+    
+    .go-arrow {
+        margin-top: -4px;
+        margin-right: -4px;
+        color: white;
+        font-family: courier, sans;
+    }
+    
+    .card {
+        display: block;
+        position: relative;
+        max-width: 300px;
+        max-height: 320px;
+        background-color: #f8f8f8;
+        border-radius: 10px;
+        padding: 2em 1.2em;
+        margin: 12px;
+        text-decoration: none;
+        z-index: 0;
+        overflow: hidden;
+        background: linear-gradient(to bottom, #fca5a5, #ffb8b8);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .card:before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: -16px;
+        right: -16px;
+        background: linear-gradient(135deg, #d62828, #ff8b8b);
+        height: 32px;
+        width: 32px;
+        border-radius: 32px;
+        transform: scale(1);
+        transform-origin: 50% 50%;
+        transition: transform 0.35s ease-out;
+    }
+    
+    .card:hover:before {
+        transform: scale(28);
+    }
+    
+    .card:hover .small-desc {
+        color: #333;
+    }
+    
+    .card:hover .card-title {
+        color: #000;
+    }
+    
+    .flex-container {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 75px;
+    } 
+
+    h1 {
+        color: #d62828;
+        text-decoration: solid;
+    }
+
+    .quotation {
+        font-style: italic;
+        margin-top: 20px;
+        color: #ffffff;
+    }
+
+    /* Media Queries for Responsive Design */
+    @media screen and (max-width: 768px) {
+        .flex-container {
+            flex-direction: column;
+            align-items: center;
+        }
+        .card {
+            max-width: 90%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <img class="logo" src="https://i.ibb.co/VDHvzFH/oss-logo-h-1.png" alt="SuperCool Logo">
+        <p class="quotation">"Creativity is intelligence having fun." - Albert Einstein</p>
+    </div>
+    <header class="header">
+        <div class="wave-container">
+            <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#273036" fill-opacity="1" d="M0,288L48,266.7C96,245,192,203,288,181.3C384,160,480,160,576,181.3C672,203,768,245,864,250.7C960,256,1056,224,1152,224C1248,224,1344,256,1392,272L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+        </div>
+        <br>
+        <section class="flex">
+            <h1>Propose Your Thinking</h1>
+        </section>
+    </header>
+    <section class="flex-container">
+        <div class="card">
+            <p class="card-title">Start a Project <i class="fas fa-lightbulb"></i></p>
+            <p class="small-desc">
+                "The only way to do great work is to love what you do." - Steve Jobs
+            </p>
+            <div class="go-corner">
+              <div class="go-arrow">→</div>
+            </div>
+        </div>
+        <div class="card">
+            <p class="card-title">Give an Idea <i class="fas fa-brain"></i></p>
+            <p class="small-desc">
+                "Don't be afraid of new ideas, be afraid of old ones." - Unknown
+            </p>
+            <div class="go-corner">
+              <div class="go-arrow">→</div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

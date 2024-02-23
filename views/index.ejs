@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAREOSS</title>
+    <link rel="icon" href="https://i.ibb.co/VDHvzFH/oss-logo-h-1.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/Desk.css">
+    <script src="https://kit.fontawesome.com/0342502787.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <section class="flex">
+            <a href="#home" class="logo">KARE OSS.</a>
+            <nav class="navbar">
+                <a href="#home"><i class="fas fa-home"></i> HOME</a>
+                <a href="/about-us"><i class="fas fa-info-circle"></i> ABOUT</a>
+                <a href="/contact-us"><i class="fas fa-lightbulb"></i> Propose an Idea</a>
+                <a href="/events"><i class="fas fa-calendar-alt"></i> EVENTS</a>
+            </nav>
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </section>
+    </header>
+    <section class="home" id="home">
+        <div class="row">
+            <div class="content">
+                <h3>KARE<br><span>OPEN SOURCE SOCIETY</span></h3>
+                <a href="#" class="btn">CONTACT US</a>
+            </div>
+            <div class="image">
+                <img src="https://i.ibb.co/1XJFb03/kareosslogo.png" alt="img">
+            </div>
+        </div>
+    </section>
+    <div class="container mt">
+        <% if (user) { %>
+            <section class="profile-section">
+                <h4>Your Profile</h4>
+                <p><i class="fas fa-user"></i> Username<%= user.username %></p>
+                <p><i class="fas fa-at"></i> Email: <%= user.email %></p>
+            </section>
+            <section class="post-section mt-4">
+                <h5>Post a Link</h5>
+                <form action="/create-post" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="title"><i class="fas fa-heading"></i> Title:</label>
+                        <input type="text" class="form-control" id="title" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="link"><i class="fas fa-link"></i> Link:</label>
+                        <input type="text" class="form-control" id="link" name="link" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="category"><i class="fas fa-folder"></i> Category:</label>
+                        <select class="form-control" id="category" name="category" required>
+                            <option value="Events">Events</option>
+                            <option value="Results">Results</option>
+                            <option value="Research">Research</option>
+                            <option value="Tech /Info">Tech /Info</option>
+                            <option value="Projects">Projects</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="content"><i class="fas fa-file-alt"></i> Content:</label>
+                        <textarea class="form-control" id="content" name="content" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="poster"><i class="fas fa-image"></i> Poster:</label>
+                        <input type="file" class="form-control-file" id="poster" name="poster" accept="image/*">
+                    </div>
+                    <div class="form-group">
+                        <label for="image"><i class="fas fa-image"></i> Image:</label>
+                        <input type="file" class="form-control-file" id="image" name="image" accept="image/*">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Submit</button>
+                </form>
+            </section>
+        <% } %>
+      
+        <% if (user) { %>
+            <a href="/logout" class="btn btn-danger mt-3"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        <% } %>
+    </div>
+    <section class="count">
+        <div class="box-container">
+            <div class="box">
+                <i class="fas fa-file-alt"></i>
+                <div class="content"> 
+                    <h3>3</h3>
+                    <p>PATENTS</p>
+                </div>
+            </div>
+            <div class="box">
+                <i class="fas fa-code-branch"></i>
+                <div class="content"> 
+                    <h3>60+</h3>
+                    <p>GITHUB PROJECTS</p>
+                </div>
+            </div>
+            <div class="box">
+                <i class="fas fa-book"></i>
+                <div class="content"> 
+                    <h3>13</h3>
+                    <p>PUBLICATIONS</p>
+                </div>
+            </div>
+            <div class="box">
+                <i class="fas fa-users"></i>
+                <div class="content"> 
+                    <h3>300+</h3>
+                    <p>OSS MEMBERSHIPS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="teachers" id="teachers">
+        <h1 class="heading"><span>CLUB COORDINATORS</span></h1>
+        <div class="teachers-slider">
+            <div class="w">
+                <div class="slide">
+                    <img src="" alt="">
+                    <div class="share">
+                        <a href="#" class="fab fa-linkedin-f"></a>
+                        <a href="#" class="fab fa-github-f"></a>
+                        <a href="#" class="fab fa-twitter-f"></a>
+                        <a href="#" class="fab fa-instagram-f"></a>
+                    </div>
+                    <h3>Dr. R.Raja Subramanian</h3>
+                </div>
+                <div class="slide">
+                    <img src="./maleimg.jpeg" alt="">
+                    <div class="share">
+                        <a href="#" class="fab fa-linkedin-f"></a>
+                        <a href="#" class="fab fa-github-f"></a>
+                        <a href="#" class="fab fa-twitter-f"></a>
+                        <a href="#" class="fab fa-instagram-f"></a>
+                    </div>
+                    <h3>NAME</h3>
+                </div>
+                <div class="slide">
+                    <img src="./maleimg.jpeg" alt="">
+                    <div class="share">
+                        <a href="#" class="fab fa-linkedin-f"></a>
+                        <a href="#" class="fab fa-github-f"></a>
+                        <a href="#" class="fab fa-twitter-f"></a>
+                        <a href="#" class="fab fa-instagram-f"></a>
+                    </div>
+                    <h3>NAME</h3>
+                </div>
+                <div class="slide">
+                    <img src="./maleimg.jpeg" alt="">
+                    <div class="share">
+                        <a href="#" class="fab fa-linkedin-f"></a>
+                        <a href="#" class="fab fa-github-f"></a>
+                        <a href="#" class="fab fa-twitter-f"></a>
+                        <a href="#" class="fab fa-instagram-f"></a>
+                    </div>
+                    <h3>NAME</h3>
+                </div>
+            </div>
+        </div>
+    </section>  
+
+    
+    <footer class="mt-5">
+        <div class="container">
+            &copy; 2024 KAREOSS -nikki 
+        </div>
+    </footer>
+    <script>
+       
+
+        let menuBtn = document.querySelector('#menu-btn');
+        let navbar = document.querySelector('.header .flex .navbar');
+
+        menuBtn.onclick = () => {
+            menuBtn.classList.toggle('fa-times');
+            navbar.classList.toggle('active');
+        };
+    </script>
+</body>
+</html>
