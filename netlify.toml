@@ -1,7 +1,0 @@
-[build]
-  command = "npm run build"
-  publish = "/dist/"  # Replace "public" with the directory where your built files are located
-
-[build.environment]
-  MONGODB_URI = "mongodb+srv://arrearbatch:Kareoss45@cluster0.gkwgzu9.mongodb.net/?retryWrites=true&w=majority"
-  SESSION_SECRET = "Osos@4545niThin@4545"
